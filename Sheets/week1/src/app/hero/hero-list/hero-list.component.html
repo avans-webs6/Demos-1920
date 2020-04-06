@@ -1,0 +1,7 @@
+<p>Heroes</p>
+
+<ul class="borderd flex" *ngIf="heroes">
+    <li *ngFor="let hero of heroes" >
+        <app-hero [hero]="hero" (onDeath)="remove(hero)" ></app-hero>
+    </li>
+</ul>

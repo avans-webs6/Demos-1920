@@ -1,0 +1,19 @@
+<div *ngIf="hero" class="borderd">
+    <h1>{{hero.name}}</h1>
+    <ul>
+        <li *ngFor="let power of hero.powers">
+            {{power}}
+        </li>
+    </ul>
+
+    <button (click)="hero.shout()">Say catch phrase</button>
+
+    <h3>Add power</h3>
+
+    <input [(ngModel)]="power"/>
+    <button (click)="addPower()">Add</button>
+
+    <h4>Extra</h4>
+
+    <button (click)="kill()">Kill me</button>
+</div>
