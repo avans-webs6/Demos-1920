@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HeroService } from '../hero.service';
 import Hero from '../hero';
 
+import { take } from 'rxjs/operators';
+
 @Component({
   selector: 'app-hero-list',
   templateUrl: './hero-list.component.html',
@@ -14,7 +16,8 @@ export class HeroListComponent implements OnInit {
   constructor(public heroService: HeroService) { }
 
   ngOnInit(): void {
-    this.heroes = this.heroService.getHeroes();
+    this.heroService.getHeroes()
+      .subscribe(heroes => this.heroes = heroes)
   }
 
   remove(hero){

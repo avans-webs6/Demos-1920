@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import Hero from './hero';
+import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class HeroService {
   }
 
   public getHeroes(){
-    return this._heroes;
+    return of(this._heroes);
   }
   
 }
