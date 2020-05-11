@@ -1,0 +1,27 @@
+<h2>Blogs</h2>
+
+  <table class="table table-striped">
+      <tr>
+          <th>Key</th>
+          <th>Name</th>
+          <th>Date</th>
+          <th>Author</th>
+          <th>Actions</th>
+      </tr>
+      <!-- Let op de b.payoad.val() methode! -->
+      <tr *ngFor="let b of blogs | async">
+          <td>{{b.id}}</td>
+          <td>{{b.name}}</td>
+          <td>{{b.date}}</td>
+          <td>{{b.author}}</td>
+          <td>
+              <button class="btn btn-sm btn-danger" (click)="delete(b.id)">Delete</button>
+              <button class="btn btn-sm btn-priary" (click)="selected = b.id">Details</button>
+
+          </td>
+      </tr>
+  </table>
+
+  <hr>
+
+  <app-blog-detail [key]="selected"></app-blog-detail>

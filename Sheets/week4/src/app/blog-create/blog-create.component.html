@@ -1,0 +1,25 @@
+<h2>Blog Form</h2>
+
+<!-- Dit formulier gaan we volgende week pimpen! -->
+<!-- probeer eens een blog toe te voegen als je niet bent ingelogd -->
+<form (ngSubmit)="onSubmit(model)" #blogForm="ngForm">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name" #name="ngModel">
+        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+            Name is required
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="author">Author</label>
+        <input type="text" class="form-control" id="author" [(ngModel)]="model.author" name="author">
+    </div>
+
+    <div class="form-group">
+        <label for="author">Date</label>
+        <input type="date" class="form-control" id="date" [(ngModel)]="model.date" name="date">
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="!blogForm.form.valid">Submit</button>
+</form>
