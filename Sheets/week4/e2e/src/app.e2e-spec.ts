@@ -10,7 +10,15 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('week4 app is running!');
+    expect(page.getTitleText()).toEqual('Blog manager');
+  });
+
+  it('should show a list of blogs', (done) => {
+    page.navigateTo();
+    expect(page.getBlogListRows().then(blogs => {
+      expect(blogs.length).toEqual(4); //2 blogs + header
+      done();
+    }));
   });
 
   afterEach(async () => {

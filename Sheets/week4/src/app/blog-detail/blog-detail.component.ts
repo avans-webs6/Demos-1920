@@ -24,7 +24,7 @@ export class BlogDetailComponent implements OnChanges {
 
   constructor(private db: BlogService, private fb: FormBuilder) { }
 
-  private blog: AngularFirestoreDocument<Blog> = null;
+  public blog: AngularFirestoreDocument<Blog> = null; 
 
   ngOnChanges(changes: SimpleChanges): void {
 
@@ -36,10 +36,11 @@ export class BlogDetailComponent implements OnChanges {
 
 
     //Als de blog word aangepast, dan moet je het formulier updaten 
-    this.blog.valueChanges()
+    this.blog.valueChanges() //ook een debounce tijd?
       .subscribe((blog: Blog) => {
         //update formulier
-        this.blogForm = this.fb.group(blog);
+        this.blogForm = this.fb.group(blog); //inefficient?
+        
         //op het nieuwe formulier ook de automatische updates binden
         this.blogForm.valueChanges
           .pipe(debounceTime(500))

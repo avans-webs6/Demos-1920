@@ -10,6 +10,7 @@ import { of } from 'rxjs';
 //Mock blog-details-component
 import { MockComponent, MockedComponent, MockRender } from 'ng-mocks';
 import { BlogDetailComponent } from '../blog-detail/blog-detail.component';
+import { Component } from '@angular/core';
 
 //Mock value​
 const mockAngularFireAuth: any = {​
@@ -21,15 +22,15 @@ const mockAngularFireAuth: any = {​
 };
 
 describe('BlogListComponent', () => {
+
   let component: BlogListComponent;
   let fixture: ComponentFixture<BlogListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BlogListComponent,  MockComponent(BlogDetailComponent) ],
+      declarations: [ BlogListComponent, MockComponent(BlogDetailComponent)],
       providers: [
-        {provide: BlogService, useClass: MockBlogService}, //hele class
-        {provide: AngularFireAuth, useValue: mockAngularFireAuth}​ //of 1 specifiek object
+        {provide: BlogService, useClass: MockBlogService }, //hele class
       ]
     })
     .compileComponents();
