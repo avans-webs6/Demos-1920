@@ -1,0 +1,15 @@
+<h2> My blog manager</h2>
+
+<button (click)="login('bart')">Bart</button>
+<button (click)="login('stijn')">Stijn</button>
+<button (click)="logout()">Logout</button>
+
+<div *ngIf="auth.user | async as user">
+  
+  <app-my-blog-list [uid]="user.uid"></app-my-blog-list>
+
+</div>
+
+
+<app-blog-list></app-blog-list>
+

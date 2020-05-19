@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "week5",
+      "public": "dist/week5",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

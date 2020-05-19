@@ -1,0 +1,22 @@
+<h2>All blogs</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Timestamp</th>
+            <th>Name</th>
+            <th>Author</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let blog of blogs$ | async">
+            <td>{{blog.id}}</td>
+            <td><span *ngIf="blog.timestamp">{{blog.timestamp.toDate() | date:'yyyy/MM/dd h:mm:ss a'}}</span></td>
+            <td>{{blog.name}}</td>
+            <td>{{blog.author}}</td>
+            <td><button (click)="update(blog)">update</button></td>
+        </tr>
+    </tbody>
+</table>
