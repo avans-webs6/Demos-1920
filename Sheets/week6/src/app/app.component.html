@@ -1,0 +1,17 @@
+<h2>Demo Dragula</h2>
+
+<div class="columns">
+  <div *ngFor="let poule of poules" >
+    <h3>{{poule.name}}</h3>
+    <ul [dragula] [dragulaModel]='poule.players'>
+      <li *ngFor="let player of poule.players">{{player.name}}</li>
+    </ul>
+  </div>
+</div>
+
+<hr>
+
+<h2>Demo D3JS</h2>
+
+<app-bars [bars]="poules | bars"></app-bars>
+
