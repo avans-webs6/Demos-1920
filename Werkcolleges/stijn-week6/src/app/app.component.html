@@ -1,0 +1,9 @@
+<h2>My blog contributors</h2>
+
+<div *ngIf="blog$ | async as blog">
+  {{blog.name}}
+
+  <ul *ngFor="let user of blog.contributors">
+    <li>{{user.name}}</li>
+  </ul>
+</div>
