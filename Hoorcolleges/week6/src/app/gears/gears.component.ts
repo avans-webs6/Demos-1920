@@ -29,7 +29,7 @@ export class GearsComponent implements OnInit, OnChanges {
     if(!this.graphic)
       return;
 
-    this.graphic.update(this.angle, this.angle);
+    this.graphic.update(this.angle / 4, this.angle);
         
   }
 
