@@ -42,6 +42,7 @@ export class AppComponent {
 
   private playercounter = 0;
 
+  //waarom is dit stukje code er? En wat gebeurd er als ik het weg haal?
   private updatePoules(){
     //wow much magic
     this.poules = [...this.poules];
