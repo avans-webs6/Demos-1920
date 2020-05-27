@@ -19,7 +19,7 @@ describe('BlogListComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ BlogListComponent ],
       providers: [
-        { provide: BlogService, useValue: {}}
+        { provide: BlogService, useValue: blogServiceMock }
       ]
     })
     .compileComponents();

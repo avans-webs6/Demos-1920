@@ -29,9 +29,7 @@ export class GearsComponent implements OnInit, OnChanges {
     if(!this.graphic)
       return;
 
-    this.graphic.update(
-      this.frameAngle += this.speed / this.frameRadius
-    );
+    this.graphic.update(this.angle, this.angle);
         
   }
 
